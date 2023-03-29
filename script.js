@@ -39,7 +39,7 @@ const fillWeatherBox = (json, cityName) => {
     region.innerHTML = `<strong>Region:</strong> ${regionName}`
     weatherBox.append(region)
 
-    let countryName = json.nearest._area[0].country[0].value
+    let countryName = json.nearest_area[0].country[0].value
     let country = document.createElement('li')
     country.className = `weather-box-item`
     country.innerHTML = `<strong>Country:</strong> ${countryName}`
@@ -51,4 +51,18 @@ const fillWeatherBox = (json, cityName) => {
     temperature.innerHTML = `<strong>Currently:</strong> Feels like ${temperatureValue}
     °`
     weatherBox.append(temperature)
+
 }
+
+
+// let previousSearch = (cityName,temperature) => {
+//    let previousSearchCityName = document.createElement('li')
+//    previousSearchCityName.textContent = cityName
+//    previousSearchCityName.className = `weather-box-item`
+//    weatherBox.append(previousSearch)
+
+//    let previousSearchTemperature = document.createElement('li')
+//    previousSearchTemperature.textContent = temperature
+//    previousSearchTemperature.className = `weather-box-item`
+//    weatherBox.append(previousSearch)
+// }
