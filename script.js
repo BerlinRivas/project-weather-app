@@ -20,6 +20,8 @@ receivedPromise.then(response => {
 })
 
 
+
+
 const fillWeatherBox = (json, cityName) => {
     weatherBox.innerHTML = ''
     
@@ -52,17 +54,38 @@ const fillWeatherBox = (json, cityName) => {
     °`
     weatherBox.append(temperature)
 
+    previousSearch(cityName, temperatureValue)
+
 }
 
+
+
+
+let previousSearch = (cityName, temperatureValue) => {
+    let previousSearch = document.querySelector(".previous-search li")
+    previousSearch.innerHTML = ""
+
+       let previousSearchCityName = document.createElement('li')
+       previousSearchCityName.textContent = `${cityName} - ${temperatureValue}`
+       //previousSearchCityName.className = `weather-box-item`
+       previousSearch.append(previousSearchCityName)
+    
+    //    let previousSearchTemperature = document.createElement('li')
+    //    previousSearchTemperature.textContent = temperature
+    //    previousSearchTemperature.className = `weather-box-item`
+    //    previousSearch.append(previousSearchTemperature)
+
+
+}
 
 // let previousSearch = (cityName,temperature) => {
 //    let previousSearchCityName = document.createElement('li')
 //    previousSearchCityName.textContent = cityName
 //    previousSearchCityName.className = `weather-box-item`
-//    weatherBox.append(previousSearch)
+//    previousSearch.append(previousSearchCityName)
 
-//    let previousSearchTemperature = document.createElement('li')
+//    let previousSearchTemp = document.createElement('li')
 //    previousSearchTemperature.textContent = temperature
 //    previousSearchTemperature.className = `weather-box-item`
-//    weatherBox.append(previousSearch)
+//    previousSearch.append(previousSearchTemperature)
 // }
